@@ -108,7 +108,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer clearfix">
-                            {{ $professeurs->links('pagination::bootstrap-5') }}
+                            {{ $etudiants->links('pagination::bootstrap-5') }}
                         </div>
                     </div>
                     <!-- /.card -->

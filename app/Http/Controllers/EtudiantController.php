@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 
 class EtudiantController extends Controller
 {
-     public function liste_etudiant(){
-        return view('etudiant.liste');
+    public function index(){
+
+         $etudiants = Etudiant::orderBy('nom','asc')->paginate(2);
+         return view('etudiant.index',[
+            'etudiants' => $etudiants
+         ]);
     }
 
     public function ajouter_etudiant(){
@@ -26,12 +30,12 @@ class EtudiantController extends Controller
     public function delete(Etudiant $etudiant){
    
           $etudiant->delete();
-          return redirect()->route('etudiant.liste')->with('success', 'etudiant supprimé avec succès');
+          return redirect()->route('etudiant.index')->with('success', 'etudiant supprimé avec succès');
     }
 
 
     public function edit(Etudiant $etudiant){
-        return view('professeur.edit',compact('professeur'));
+        return view('etudiant.edit',compact('etudiant'));
     }
 
     public function update(Request $request, Etudiant $etudiant){
@@ -46,7 +50,7 @@ class EtudiantController extends Controller
             'classe' => $request->input('classe')
         ]);
         
-        return redirect()->route('etudiant.liste')->with('success', 'Etudiant modifié avec succès');
+        return redirect()->route('etudiant.index')->with('success', 'Etudiant modifié avec succès');
     }
 
 }

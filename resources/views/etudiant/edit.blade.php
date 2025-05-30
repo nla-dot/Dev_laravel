@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Tableau de bord</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('etudiant.liste') }}">Etudiant</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('etudiant.index') }}">Etudiant</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Modifier</li>
                     </ol>
                 </div>
@@ -89,7 +89,7 @@
                             <!--begin::Footer-->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-secondary">Mettre à jour</button>
-                                <a href="{{ route('etudiant.liste') }}" class="btn float-end">Revenir sur la liste</a>
+                                <a href="{{ route('etudiant.index') }}" class="btn float-end">Revenir sur la liste</a>
                             </div>
                             <!--end::Footer-->
                         </form>
